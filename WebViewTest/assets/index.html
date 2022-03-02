@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+</head>
+
+<body>
+    WebViewTest Index
+    <p>Here is
+        <script>document.write(location.pathname)</script>
+    </p>
+    <ul>
+        <li><a href="foo.html">foo</a></li>
+        <li><a href="https://google.com/" target="_blank">Google</a></li>
+        <li><a id="btn-subwindow" href="subwindow.html">Subwindow</a></li>
+    </ul>
+
+    <p>
+        Received from Worker:
+        <span id="txt-received">not yet</span>
+    </p>
+
+    <h3>Context Menu Test Zone</h3>
+    <form id="alert-form" action="#">
+        <input id="alert-form-input" />
+        <button>Alert</button>
+    </form>
+    <p>
+        <img src="https://www.gstatic.com/webp/gallery/4.sm.jpg" />
+    </p>
+    <p>
+        <video controls>
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" />
+        </video>
+    </p>
+    <p>
+        <audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+        </audio>
+    </p>
+    <script src="index.js"></script>
+</body>
+
+</html>
