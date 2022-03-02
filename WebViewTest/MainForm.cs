@@ -1,4 +1,3 @@
-using Microsoft.Web.WebView2.Core;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,9 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Windows.Win32;
-using Windows.Win32.Foundation;
-using Windows.Win32.Graphics.Dwm;
+using Microsoft.Web.WebView2.Core;
 using Newtonsoft.Json.Linq;
 
 namespace WebViewTest;
@@ -28,13 +25,6 @@ public partial class MainForm : Form
     public MainForm()
     {
         this.InitializeComponent();
-
-        unsafe
-        {
-            var hwnd = (HWND)this.Handle;
-            uint attribute = 2; // DWMWCP_ROUND
-            PInvoke.DwmSetWindowAttribute(hwnd, DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE, &attribute, sizeof(uint));
-        }
 
 #if !DEBUG
         this.mainMenuStrip.Hide();
@@ -220,7 +210,7 @@ public partial class MainForm : Form
     {
         this.webView.Reload();
     }
-    
+
     private void devToolsToolStripMenuItem_Click(object sender, EventArgs e)
     {
         this.webView.CoreWebView2?.OpenDevToolsWindow();

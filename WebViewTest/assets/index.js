@@ -10,10 +10,8 @@ document.getElementById("btn-subwindow").onclick = (ev) => {
     chrome.webview.postMessage({ type: "subwindow" });
 }
 
-if (location.pathname == "/index.html") {
-    console.log("Start worker")
-    new Worker("/worker.js")
-}
+console.log("Start worker")
+new Worker("/worker.js")
 
 const chan = new BroadcastChannel("worker-channel")
 chan.onmessage = (ev) => {
